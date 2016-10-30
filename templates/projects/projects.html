@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <div ng-repeat="project in projects" class="projects">
+        <h2>{{project.title}}</h2>
+        <a href="{{project.url}}" ng-mouseover="hover=true" ng-mouseleave="hover=false">
+            <p ng-show="hover" ng-mouseover="hover=true"> {{project.description}} </p>
+            <img id="projectImg" ng-class="{darken:hover}" ng-src="{{project.image}}" alt="{{project.title}}">
+        	<p ng-show="hover" ng-mouseover="hover=true"> <i>{{project.skills}}</i> </p>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Portfolio</title>
+    <meta name="description" content="Personal Portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,400" rel="stylesheet">
+
+    <!-- Main Style Sheet with Normalize.css-->
+    <link href="stylesheets/style.min.css" rel="stylesheet">
+
+    <!-- Modernizr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+
+<body ng-app="appModule" class="ng-cloak" ng-cloak>
+    <div ng-controller="infoController">
+        <div class="aboutSection" ng-click="showMenu=false">
+            <div class="about">
+                <!-- About Me -->
+                <div class="title">
+                    <h1>{{bio.name}}</h1>
+                    <h2>{{bio.role}}</h2>
+                </div>
+                <div class="skills">
+                    <h2>Skills</h2>
+                    <div class="topSkills">
+                        <ul>
+                            <li>HTML/CSS/JS</li>
+                            <li>SASS</li>
+                            <li>Bootstrap</li>
+                            <li>jQuery</li>
+                        </ul>
+                    </div>
+                    <div class="line"></div>
+                    <div class="bottomSkills">
+                        <ul>
+                            <li>Github</li>
+                            <li>Gulp</li>
+                            <li>Knockout</li>
+                            <li>Angular</li>
+                            <li>React</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Projects -->
+        <div class="projectSection" ng-click="showMenu=false">
+            <projects></projects>
+        </div>
+        <!-- Contact-->
+        <div class="contactSection" ng-click="showMenu=false">
+            <contacts></contacts>
+        </div>
+    </div>
+    <!-- Main JS contains jQuery and AngularJS concatenated-->
+    <script src="scripts/main.min.js"></script>
+
+    <!-- Google Analytics-->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84281720-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+<footer>
+    <p>Created with:</p>
+    <i class="icon ion-social-html5-outline"></i>
+    <i class="ion-social-css3-outline"></i>
+    <i class="ion-social-javascript-outline"></i>
+    <i class="ion-social-angular-outline"></i>
+    <i class="ion-social-sass"></i>
+    <p>By Johnny Bui, 2016</p>
+</footer>
+</html>
