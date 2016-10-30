@@ -5592,6 +5592,93 @@ textarea {
 .shrink {
   width: 150px; }
 
+/***** Initial loadup animation *****/
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-ms-keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.title {
+  -webkit-animation: fade 0.5s ease 0.2s both;
+  -moz-animation: fade 0.5s ease 0.2s both;
+  -o-animation: fade 0.5s ease 0.2s both;
+  -ms-animation: fade 0.5s ease 0.2s both;
+  animation: fade 0.5s ease 0.2s both; }
+
+.skills {
+  -webkit-animation: fade 0.5s ease 0.4s both;
+  -moz-animation: fade 0.5s ease 0.4s both;
+  -o-animation: fade 0.5s ease 0.4s both;
+  -ms-animation: fade 0.5s ease 0.4s both;
+  animation: fade 0.5s ease 0.4s both; }
+
+.contactSection {
+  -webkit-animation: fade 0.5s ease 1.4s both;
+  -moz-animation: fade 0.5s ease 1.4s both;
+  -o-animation: fade 0.5s ease 1.4s both;
+  -ms-animation: fade 0.5s ease 1.4s both;
+  animation: fade 0.5s ease 1.4s both; }
+
+footer {
+  -webkit-animation: fade 0.5s ease 1.6s both;
+  -moz-animation: fade 0.5s ease 1.6s both;
+  -o-animation: fade 0.5s ease 1.6s both;
+  -ms-animation: fade 0.5s ease 1.6s both;
+  animation: fade 0.5s ease 1.6s both; }
+
+.projects:nth-child(1) {
+  -webkit-animation: fade 0.5s linear 0.5s both;
+  -moz-animation: fade 0.5s linear 0.5s both;
+  -o-animation: fade 0.5s linear 0.5s both;
+  -ms-animation: fade 0.5s linear 0.5s both;
+  animation: fade 0.5s linear 0.5s both; }
+
+.projects:nth-child(2) {
+  -webkit-animation: fade 0.5s linear 0.7s both;
+  -moz-animation: fade 0.5s linear 0.7s both;
+  -o-animation: fade 0.5s linear 0.7s both;
+  -ms-animation: fade 0.5s linear 0.7s both;
+  animation: fade 0.5s linear 0.7s both; }
+
+.projects:nth-child(3) {
+  -webkit-animation: fade 0.5s linear 0.9s both;
+  -moz-animation: fade 0.5s linear 0.9s both;
+  -o-animation: fade 0.5s linear 0.9s both;
+  -ms-animation: fade 0.5s linear 0.9s both;
+  animation: fade 0.5s linear 0.9s both; }
+
+.projects:nth-child(4) {
+  -webkit-animation: fade 0.5s linear 1.1s both;
+  -moz-animation: fade 0.5s linear 1.1s both;
+  -o-animation: fade 0.5s linear 1.1s both;
+  -ms-animation: fade 0.5s linear 1.1s both;
+  animation: fade 0.5s linear 1.1s both; }
+
 html,
 body {
   margin: 0;
@@ -5618,10 +5705,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
+  @media (max-width: 816px) {
+    .about {
+      display: block; } }
 
 .title {
-  margin-bottom: 10px;
-  margin-right: 0;
   padding: 50px;
   background: #476072; }
   .title h1 {
@@ -5633,6 +5721,10 @@ body {
     .title {
       margin-bottom: 0;
       margin-right: 10px; } }
+  @media (max-width: 816px) {
+    .title {
+      margin-bottom: 10px;
+      margin-right: 0; } }
 
 /***** Skills ****/
 .skills {
@@ -5729,18 +5821,10 @@ body {
           font-size: 17px; } }
 
 .contact {
-  padding: 25px 0;
+  padding: 25px 10px;
   margin: 20px auto; }
   .contact h2 {
-    margin-top: 0; }
-  .contact p {
-    margin-top: 0;
-    padding: 0 50px;
-    line-height: 25px;
-    font-size: 16px; }
-  .contact h3 {
-    font-weight: 400;
-    margin: 0; }
+    font-weight: 400; }
   .contact .contactIcons {
     margin: 0;
     padding: 0; }
@@ -5758,13 +5842,25 @@ body {
           color: #565656; }
   @media (min-width: 768px) {
     .contact {
-      width: 600px; }
+      width: 768px; }
+      .contact h1 {
+        font-size: 2em; }
       .contact p {
-        font-size: 18px; } }
-  @media only screen and (max-device-width: 767px) and (orientation: landscape) {
-    .contact {
-      position: relative;
-      margin: 80px 0; } }
+        font-size: 18px;
+        line-height: 30px; }
+      .contact h2 {
+        font-size: 1.5em; } }
+  @media (max-width: 816px) {
+    .contact h1 {
+      font-size: 1.5em; }
+    .contact p {
+      margin-top: 0;
+      padding: 10px;
+      line-height: 25px;
+      font-size: 16px; }
+    .contact h2 {
+      font-size: 1.25em;
+      margin: 0; } }
 
 .contactBtn {
   padding: 10px 30px;

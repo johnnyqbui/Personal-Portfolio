@@ -7,7 +7,7 @@ $subtle-grey: rgba(130, 130, 120, .5);
 $gun-metal: #565656;
 $ash-grey: rgba(30, 30, 30, .9);
 // Breakpoint for Screen Sizes
-$breakpoints: ('small':( min-width: 512px), 'medium': ( min-width: 768px), 'large': ( min-width: 1025px));
+$breakpoints: ('small':( min-width: 512px), 'medium': ( min-width: 768px), 'large': ( min-width: 1025px), 'custom': ( max-width: 816px));
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints, $name) {
         @media #{inspect(map-get($breakpoints, $name))} {
@@ -19,10 +19,20 @@ $breakpoints: ('small':( min-width: 512px), 'medium': ( min-width: 768px), 'larg
     }
 }
 
-@mixin mobile-landscape {
-    @media only screen and (max-device-width: 767px) and (orientation: landscape) {
-        @content;
-    }
+@mixin animation($name, $duration, $ease, $delay, $direction) {
+  -webkit-animation: $name $duration $ease $delay $direction;
+  -moz-animation: $name $duration $ease $delay $direction;
+  -o-animation: $name $duration $ease $delay $direction;
+  -ms-animation: $name $duration $ease $delay $direction;
+  animation: $name $duration $ease $delay $direction;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content; }
+  @-moz-keyframes #{$name} { @content; }
+  @-o-keyframes #{$name} { @content; }
+  @-ms-keyframes #{$name} { @content; }
+  @keyframes #{$name} { @content; }
 }
 
 @mixin transition($transitions) {
@@ -97,6 +107,37 @@ $breakpoints: ('small':( min-width: 512px), 'medium': ( min-width: 768px), 'larg
     width: 150px;
 }
 
+/***** Initial loadup animation *****/
+
+@include keyframes(fade) {
+    0%   {opacity : 0;}
+    100% {opacity : 1;}
+}
+
+.title {
+    @include animation(fade, .5s, ease, .2s, both);
+}
+
+.skills {
+    @include animation(fade, .5s, ease, .4s, both);
+}
+
+.contactSection {
+    @include animation(fade, .5s, ease, 1.4s, both);
+}
+
+footer {
+    @include animation(fade, .5s, ease, 1.6s, both);
+}
+
+$delay: .5s;
+@for $project from 0 to 4 {
+    .projects:nth-child(#{$project + 1}) {
+        @include animation (fade, .5s, linear, $delay, both)
+    }
+    $delay: $delay + .2s;
+}
+
 html,
 body {
     margin: 0;
@@ -129,11 +170,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    @include breakpoint(custom) {
+        display: block;
+    }
+
 }
 
 .title {
-    margin-bottom: 10px;
-    margin-right: 0;
     padding: 50px;
     background: $nice-blue;
     h1 {
@@ -147,6 +190,11 @@ body {
         margin-bottom: 0;
         margin-right: 10px;
     }
+    @include breakpoint(custom) {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
 }
 
 /***** Skills ****/
@@ -242,20 +290,10 @@ body {
 
 // Contact Info
 .contact {
-    padding: 25px 0;
+    padding: 25px 10px;
     margin: 20px auto;
-    h2{
-        margin-top: 0;
-    }
-    p {
-        margin-top: 0;
-        padding: 0 50px;
-        line-height: 25px;
-        font-size: 16px;
-    }
-    h3 {
+    h2 {
         font-weight: 400;
-        margin: 0;
     }
     .contactIcons {
         margin: 0;
@@ -274,15 +312,32 @@ body {
         }
     }
     @include breakpoint(medium) {
-        width: 600px;
+        width: 768px;
+        h1 {
+            font-size: 2em;
+        }
         p {
             font-size: 18px;
+            line-height: 30px;
+        }
+        h2 {
+            font-size: 1.5em;
         }
     }
-
-    @include mobile-landscape {
-        position: relative;
-        margin: 80px 0;
+    @include breakpoint(custom) {
+        h1 {
+            font-size: 1.5em;
+            }
+        p {
+            margin-top: 0;
+            padding: 10px;
+            line-height: 25px;
+            font-size: 16px;
+        }
+        h2 {
+            font-size: 1.25em;
+            margin: 0;
+        }
     }
 }
 

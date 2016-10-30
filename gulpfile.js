@@ -78,7 +78,7 @@ gulp.task('min-js', function (cb) {
 // Local Web Server and live reload
 gulp.task('connect', function() {
     connect.server({
-        root: 'src',
+        root: 'dist',
         livereload: true,
         port: 8888,
     });
