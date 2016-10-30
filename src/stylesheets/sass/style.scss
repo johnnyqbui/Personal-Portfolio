@@ -4,6 +4,7 @@
 $nice-blue: #476072;
 $light-grey: #f2f2f2;
 $subtle-grey: rgba(130, 130, 120, .5);
+$gun-metal: #565656;
 $ash-grey: rgba(30, 30, 30, .9);
 // Breakpoint for Screen Sizes
 $breakpoints: ('small':( min-width: 512px), 'medium': ( min-width: 768px), 'large': ( min-width: 1025px));
@@ -241,10 +242,20 @@ body {
 
 // Contact Info
 .contact {
-    padding: 20px 50px;
+    padding: 25px 0;
     margin: 20px auto;
+    h2{
+        margin-top: 0;
+    }
     p {
+        margin-top: 0;
+        padding: 0 50px;
         line-height: 25px;
+        font-size: 16px;
+    }
+    h3 {
+        font-weight: 400;
+        margin: 0;
     }
     .contactIcons {
         margin: 0;
@@ -253,17 +264,20 @@ body {
             text-decoration: none;
             li {
                 font-size: 40px;
-                padding: 0 25px;
+                padding: 0 20px;
                 color: $nice-blue;
                 @include transition(.2s ease);
                 &:hover {
-                    color: $subtle-grey;
+                    color: $gun-metal;
                 }
             }
         }
     }
     @include breakpoint(medium) {
         width: 600px;
+        p {
+            font-size: 18px;
+        }
     }
 
     @include mobile-landscape {
@@ -273,7 +287,7 @@ body {
 }
 
 .contactBtn {
-    @include button(20px 0, $subtle-grey);
+    @include button(20px 0, $gun-metal);
     &:hover {
         background: $nice-blue;
     }

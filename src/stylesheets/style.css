@@ -5306,10 +5306,18 @@ body {
           font-size: 17px; } }
 
 .contact {
-  padding: 20px 50px;
+  padding: 25px 0;
   margin: 20px auto; }
+  .contact h2 {
+    margin-top: 0; }
   .contact p {
-    line-height: 25px; }
+    margin-top: 0;
+    padding: 0 50px;
+    line-height: 25px;
+    font-size: 16px; }
+  .contact h3 {
+    font-weight: 400;
+    margin: 0; }
   .contact .contactIcons {
     margin: 0;
     padding: 0; }
@@ -5317,17 +5325,19 @@ body {
       text-decoration: none; }
       .contact .contactIcons a li {
         font-size: 40px;
-        padding: 0 25px;
+        padding: 0 20px;
         color: #476072;
         -webkit-transition: 0.2s ease;
         -moz-transition: 0.2s ease;
         -o-transition: 0.2s ease;
         transition: 0.2s ease; }
         .contact .contactIcons a li:hover {
-          color: rgba(130, 130, 120, 0.5); }
+          color: #565656; }
   @media (min-width: 768px) {
     .contact {
-      width: 600px; } }
+      width: 600px; }
+      .contact p {
+        font-size: 18px; } }
   @media only screen and (max-device-width: 767px) and (orientation: landscape) {
     .contact {
       position: relative;
@@ -5338,7 +5348,7 @@ body {
   cursor: pointer;
   color: white;
   border: none;
-  background: rgba(130, 130, 120, 0.5);
+  background: #565656;
   border-radius: 5px;
   margin: 20px 0;
   -webkit-transition: 0.3s ease;
