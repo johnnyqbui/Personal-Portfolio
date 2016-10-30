@@ -1,0 +1,20 @@
+<div class="contact">
+    <h2>About me</h2>
+    <p>{{bio.about}}</p>
+    <h3> Let's make something happen! </h3>
+    <a href="mailto:johnnyqbui7@gmail.com">
+        <button class="contactBtn" ng-class="email ? 'shrink' : 'expand'" ng-mouseover="email=!email" ng-mouseleave="email=!email">{{toggleEmail}}</button>
+    </a>
+    <p>Find me around here:</p>
+    <ul class="contactIcons">
+        <a ng-href="{{bio.contacts.github}}">
+            <li class="fa fa-github" aria-hidden="true"></li>
+        </a>
+        <a ng-href="{{bio.contacts.codepen}}">
+            <li class="fa fa-codepen" aria-hidden="true"></li>
+        </a>
+        <a ng-href="{{bio.contacts.linkedin}}">
+            <li class="fa fa-linkedin-square" aria-hidden="true"></li>
+        </a>
+    </ul>
+</div>

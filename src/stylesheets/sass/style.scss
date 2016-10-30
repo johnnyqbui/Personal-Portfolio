@@ -1,0 +1,293 @@
+@import "../vendors/font-awesome/scss/font-awesome";
+@import "../vendors/ionicons/scss/ionicons";
+// Colors
+$nice-blue: #476072;
+$light-grey: #f2f2f2;
+$subtle-grey: rgba(130, 130, 120, .5);
+$ash-grey: rgba(30, 30, 30, .9);
+// Breakpoint for Screen Sizes
+$breakpoints: ('small':( min-width: 512px), 'medium': ( min-width: 768px), 'large': ( min-width: 1025px));
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a breakpoint named `#{$name}`.";
+    }
+}
+
+@mixin mobile-landscape {
+    @media only screen and (max-device-width: 767px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin transition($transitions) {
+    -webkit-transition: $transitions;
+    -moz-transition: $transitions;
+    -o-transition: $transitions;
+    transition: $transitions;
+}
+
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    -o-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin filter($filter-type, $filter-amount) {
+    -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+    -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+    -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+    -o-filter: $filter-type+unquote('(#{$filter-amount})');
+    filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+@mixin button($margin, $background) {
+    padding: 10px 30px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background: $background;
+    border-radius: 5px;
+    margin: $margin;
+    @include transition(.3s ease);
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin skill-divider {
+    ul {
+        margin: 0;
+        padding: 0 10px;
+        list-style-type: none;
+        li {
+            font-weight: 400;
+            padding: 0 10px;
+            display: inline-block;
+        }
+    }
+}
+
+@mixin margin-center {
+    margin: 0 auto;
+}
+
+// Prevent curly braces from showing on initial load
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+// Angular Animations
+.darken {
+    @include filter(brightness, 35%);
+}
+
+.expand {
+    width: 250px;
+}
+
+.shrink {
+    width: 150px;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: Raleway, sans-serif;
+    font-weight: 200;
+    color: black;
+}
+
+.aboutSection {
+    margin: 20px;
+    text-align: center;
+}
+
+.projectSection {
+    text-align: center;
+}
+
+.contactSection {
+    text-align: center;
+    background: $light-grey;
+}
+
+/***** About Section *****/
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title {
+    margin-bottom: 10px;
+    margin-right: 0;
+    padding: 50px;
+    background: $nice-blue;
+    h1 {
+        font-weight: 400;
+        color: white;
+    }
+    h2 {
+        color: white;
+    }
+    @include breakpoint(medium) {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+}
+
+/***** Skills ****/
+
+.skills {
+    padding: 40px 20px;
+    font-size: 15px;
+    background: $light-grey;
+    h2 {
+        margin: 0;
+    }
+}
+
+.topSkills {
+    @include skill-divider;
+    margin-top: 20px;
+}
+
+.line {
+    margin: 20px auto;
+    width: 75%;
+    height: 5px;
+    border-radius: 5px;
+    background: $nice-blue;
+}
+
+.bottomSkills {
+    @include skill-divider;
+}
+
+/***** Projects *****/
+
+.wrapper {
+    @include margin-center;
+    max-width: 800px;
+    .projects {
+        display: inline-block;
+        width: 90%;
+        max-width: 400px;
+        h2 {
+            margin-bottom: 10px;
+        }
+        a {
+            width: 80%;
+            position: relative;
+            display: inline-block;
+            p {
+                font-size: 13px;
+                font-weight: 200;
+                position: absolute;
+                z-index: 10;
+                color: white;
+            }
+            p:nth-of-type(1) {
+                top: 30%;
+                left: 50%;
+                width: 70%;
+                @include transform(translate(-50%, -30%));
+            }
+            p:nth-of-type(2) {
+                top: 80%;
+                left: 50%;
+                width: 90%;
+                @include transform(translate(-50%, -80%));
+                i {
+                    color: white;
+                }
+            }
+            img {
+                width: 100%;
+                margin: 0 0;
+                @include transition(.3s ease);
+            }
+        }
+        @include breakpoint(small) {
+            a p {
+                font-size: 15px;
+            }
+        }
+        @include breakpoint(medium) {
+            a p {
+                font-size: 16px;
+            }
+        }
+        @include breakpoint(large) {
+            width: 50%;
+            a p {
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+// Contact Info
+.contact {
+    padding: 20px 50px;
+    margin: 20px auto;
+    p {
+        line-height: 25px;
+    }
+    .contactIcons {
+        margin: 0;
+        padding: 0;
+        a {
+            text-decoration: none;
+            li {
+                font-size: 40px;
+                padding: 0 25px;
+                color: $nice-blue;
+                @include transition(.2s ease);
+                &:hover {
+                    color: $subtle-grey;
+                }
+            }
+        }
+    }
+    @include breakpoint(medium) {
+        width: 600px;
+    }
+
+    @include mobile-landscape {
+        position: relative;
+        margin: 80px 0;
+    }
+}
+
+.contactBtn {
+    @include button(20px 0, $subtle-grey);
+    &:hover {
+        background: $nice-blue;
+    }
+}
+
+footer {
+    margin: 20px;
+    text-align: center;
+    p {
+        font-size: 13px;
+    }
+    i {
+        font-size: 25px;
+        padding: 10px;
+        color: $nice-blue;
+    }
+}

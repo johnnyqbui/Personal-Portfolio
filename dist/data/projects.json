@@ -1,0 +1,29 @@
+[{
+    "title": "Mockup Portfolio",
+    "dates": "March 2016",
+    "description": "My first project for Udacity. Created a portfolio page from a PDF mockup file",
+    "skills": "HTML, CSS, Bootstrap",
+    "image": "images/mockup-portfolio.min.jpg",
+    "url": "http://johnnyqbui.github.io/Portfolio-Mockup"
+}, {
+    "title": "Arcade Game",
+    "dates": "May 2016",
+    "description": "Inspired by frogger game, created HTML5 canvas game with use of Object Oriented JavaScript",
+    "skills": "HTML5 Canvas, VanillaJS",
+    "image": "images/arcade-game.min.jpg",
+    "url": "http://johnnyqbui.github.io/Arcade-Game-Frogger-Clone"
+}, {
+    "title": "Parking Tickets",
+    "dates": "May 2016",
+    "description": "Houston 2016 Hackathon team developed app that shows where parking tickets were given most in Houston",
+    "skills": "HTML, CSS, Google Maps API",
+    "image": "images/project-tickets.min.jpg",
+    "url": "https://johnnyqbui.github.io/projectTicket"
+}, {
+    "title": "Neighborhood Map",
+    "dates": "July 2016",
+    "description": "App that shows suggested locations in Seattle, WA using AJAX requests and Knockout's MVVM pattern",
+    "skills": "HTML, CSS, jQuery, AJAX, KnockoutJS",
+    "image": "images/neighborhood-map.min.jpg",
+    "url": "https://johnnyqbui.github.io/Project-Neighborhood-Map/"
+}]
