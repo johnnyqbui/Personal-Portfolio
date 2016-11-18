@@ -7,7 +7,7 @@ $subtle-grey: rgba(130, 130, 120, .5);
 $gun-metal: #565656;
 $ash-grey: rgba(30, 30, 30, .9);
 // Breakpoint for Screen Sizes
-$breakpoints: ('small':( min-width: 512px), 'medium': ( min-width: 768px), 'large': ( min-width: 1025px), 'custom': ( max-width: 816px));
+$breakpoints: ('small':( min-width: 512px), 'medium': ( min-width: 768px), 'large': ( min-width: 1025px), 'custom': ( max-width: 833px));
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints, $name) {
         @media #{inspect(map-get($breakpoints, $name))} {
@@ -123,15 +123,15 @@ $breakpoints: ('small':( min-width: 512px), 'medium': ( min-width: 768px), 'larg
 }
 
 .contactSection {
-    @include animation(fade, .5s, ease, 1.4s, both);
+    @include animation(fade, .5s, ease, 1.8s, both);
 }
 
 footer {
-    @include animation(fade, .5s, ease, 1.6s, both);
+    @include animation(fade, .5s, ease, 2.0s, both);
 }
 
 $delay: .5s;
-@for $project from 0 to 4 {
+@for $project from 0 to 6 {
     .projects:nth-child(#{$project + 1}) {
         @include animation (fade, .5s, linear, $delay, both)
     }
@@ -312,7 +312,7 @@ body {
         }
     }
     @include breakpoint(medium) {
-        width: 768px;
+        max-width: 768px;
         h1 {
             font-size: 2em;
         }

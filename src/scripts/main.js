@@ -16,8 +16,7 @@
                 "codepen": "https://codepen.io/jbui/",
                 "linkedin": "https://www.linkedin.com/in/johnny-bui-b91893121"
             },
-            "about": "I originally pursued a medical career for about two years before I decided that a medical profession is not for me. " +
-                "After that, I switched my major to Computer Information Systems and took my very first Computer Science class. " +
+            "about": "I originally pursued a medical career for about two years before I switched my major to Computer Information Systems and took my very first Computer Science class. " +
                 "It was then that I discovered my passion for coding. Since then, I've taught myself aspects of Front End Development by taking " +
                 "online courses such as Udacity, Udemy, and FreeCodeCamp and even attended a hackathon. Coding is not just a passion to me, it's a lifestyle. " +
                 "I am always looking for new and exciting opportunities."

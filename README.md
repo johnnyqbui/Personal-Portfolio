@@ -1,22 +1,29 @@
-# Personal Portfolio 2.0
+# Personal Portfolio
 
-My Personal Portfolio
+## Technologies used:
 
-My first portfolio looked crappy, so I completely redesigned it.
+* HTML/CSS/JS
 
-## Built with:
-
-* HTML
-* CSS
-* JS/jQuery
-* AngularJS
 * SASS
-* GulpJS
+
+* jQuery
+
+* Angular
+
+* Gulp
+
+## Dev environment:
+
+* Run 'gulp' in command prompt
 
 ## More Information:
 
 * Created using mobile-first responsive design.
-* Used one-way data binding to obtain personal bio details.
-* Extracted project data from JSON file using $http request.
+
 * Setup web server with live reload.
+
 * Minified images, CSS, and JS files.
+
+## NOTE:
+
+Make changes to both src and dist to match.
